@@ -1,8 +1,6 @@
 from fastapi import FastAPI
+from routers.home import router as home_router
 
 app = FastAPI(title="ATLAS API")
 
-
-@app.get("/")
-def read_root():
-    return {"message": "ATLAS API is running"}
+app.include_router(home_router)
